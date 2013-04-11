@@ -32,8 +32,10 @@ Capistrano::Configuration.instance.load do
                    deploy:db:seed)
 
 
-        agree = Capistrano::CLI.ui.agree("deploy:db:init will DROP your database. Are you sure? (Yes, No)") do |q|
-          q.default = 'No'
+        if ENV["FORCE_DEPLOY_DB_INIT"] == nil
+          agree = Capistrano::CLI.ui.agree("deploy:db:init will DROP your database. Are you sure? (Yes, No)") do |q|
+            q.default = 'No'
+          end
         end
 
         transaction do
