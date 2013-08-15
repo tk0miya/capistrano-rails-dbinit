@@ -12,7 +12,7 @@ Capistrano::Configuration.instance.load do
         run_rake("db:create")
       end
 
-      desc "Create Database"
+      desc "Drop Database"
       task :drop, {:roles => :db, :only => {:primary => true}} do
         run_rake("db:drop")
       end
