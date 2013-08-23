@@ -11,6 +11,7 @@ Gem::Specification.new do |gem|
   gem.description   = "Capistrano tasks to initialize database for Rails Apps"
   gem.summary       = "Capistrano tasks to initialize database for Rails Apps"
   gem.homepage      = "https://github.com/tk0miya/capistrano-rails-dbinit"
+  gem.license       = "MIT"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
